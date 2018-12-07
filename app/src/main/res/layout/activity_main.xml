@@ -16,8 +16,36 @@
         android:id="@+id/tv_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:text="画廊图片浏览"/>
+        android:text="画廊图片浏览，使用viewpager实现，支持滑动"/>
+
+    <TextView
+        android:id="@+id/tv_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="图片缩放滑动处理案例"/>
+
+    <TextView
+        android:id="@+id/tv_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="加载超级大图的缩放滑动案例"/>
+
+    <TextView
+        android:id="@+id/tv_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:text="加载超级大图，带有加载loading的缩放滑动案例"/>
 
 </LinearLayout>

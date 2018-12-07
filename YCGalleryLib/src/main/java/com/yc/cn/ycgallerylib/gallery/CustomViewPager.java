@@ -5,7 +5,15 @@ import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-
+/**
+ * <pre>
+ *     @author yangchong
+ *     blog  : https://github.com/yangchong211
+ *     time  : 2017/05/30
+ *     desc  : 自定义ViewPager
+ *     revise:
+ * </pre>
+ */
 public class CustomViewPager extends ViewPager {
 
     private boolean isLocked;
