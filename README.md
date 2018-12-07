@@ -16,7 +16,7 @@
 
 
 ### 0.使用场景模拟
-![image]()
+![image](https://github.com/yangchong211/YCGallery/blob/master/image/galley.gif)
 
 
 ### 1.本库优势亮点
@@ -181,11 +181,11 @@
 
 
 ### 4.效果展示
-![image]()
-![image]()
-![image]()
-![image]()
-![image]()
+![image](https://github.com/yangchong211/YCGallery/blob/master/image/1.png)
+![image](https://github.com/yangchong211/YCGallery/blob/master/image/2.jpg)
+![image](https://github.com/yangchong211/YCGallery/blob/master/image/3.jpg)
+![image](https://github.com/yangchong211/YCGallery/blob/master/image/4.jpg)
+![image](https://github.com/yangchong211/YCGallery/blob/master/image/5.jpg)
 
 
 
