@@ -15,6 +15,7 @@
 - 5.其他介绍
 
 
+
 ### 0.使用场景模拟
 ![image](https://github.com/yangchong211/YCGallery/blob/master/image/galley.gif)
 
@@ -31,6 +32,8 @@
 
 
 ### 2.使用介绍
+- 如何引用：implementation 'cn.yc:YCGalleryLib:1.1.3'
+
 #### 2.1 图片缩放与滑动控件
 - 在布局中
     ```
