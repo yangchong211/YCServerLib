@@ -7,6 +7,7 @@
     - 2.1 图片缩放与滑动控件
     - 2.2 支持加载loading的图片缩放控件
     - 2.3 支持ViewPager滑动的画廊控件
+    - 2.4 使用RecyclerView实现画廊浏览
 - 3.注意要点
     - 3.1 项目注意点
     - 3.2 项目难点问题
@@ -29,6 +30,8 @@
 - 该缩放控件可以和ViewPager结合使用，效果非常棒，这个你可以跑下demo看下效果就知道
 - 当该缩放控件加载大图时，比如超过2MB以上的图片，那么加载图片也需要时间，这时候ZoomLayoutView支持加载loading
 - 开发者可以自己实现单击事件和长按事件，比如前产品要求，点击关闭缩放浏览页面，这个也可以实现
+- 支持使用RecyclerView实现画廊的效果，滑动十分流畅，同时支持图片，视频浏览。类似自己微信的朋友圈动态
+
 
 
 ### 2.使用介绍
@@ -122,6 +125,8 @@
             .setThumbnailSize(200)
             //设置是否支持缩放
             .setZoom(true)
+            //设置缩放的倍数，当不支持缩放时，设置该参数无效
+            .setZoomSize(3)
             //设置是否隐藏底部缩略图
             .hideThumbnails(false)
             //设置FragmentManager
@@ -158,6 +163,54 @@
     //获取控件Viewpager
     ViewPager viewPager = scrollGalleryView.getViewPager();
     ```
+
+
+#### 2.4 使用RecyclerView实现画廊浏览
+- 在布局中
+    ```
+    <com.yc.cn.ycgallerylib.recyclerView.GalleryRecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000" />
+    ```
+- 在代码中
+    ```
+    mRecyclerView
+            //设置滑动速度
+            .setFlingSpeed(10000)
+            //设置adapter
+            .setDataAdapter(adapter)
+            //设置选中的索引
+            .setSelectedPosition(2)
+            //设置横向或者竖向，注意需要限制传入类型
+            .setOrientation(RecyclerView.HORIZONTAL)
+            //设置滚动监听事件
+            .setOnGalleryListener(new OnGalleryListener() {
+                @Override
+                public void onInitComplete() {
+                    Log.e(TAG,"onInitComplete初始化完成");
+                }
+    
+                @Override
+                public void onPageRelease(boolean isNext,int position) {
+                    Log.e(TAG,"释放的监听，释放位置:"+position +" 下一页:"+isNext);
+                    if (isNext){
+                        Log.e(TAG,"释放的监听，释放位置:"+position +" 下一页:"+isNext);
+                    }else {
+                        Log.e(TAG,"释放的监听，释放位置:"+position +" 上一页:"+isNext);
+                    }
+                }
+    
+                @Override
+                public void onPageSelected(int position) {
+                    Log.e(TAG,"释放的监听，释放位置:"+position +" 当前页:"+position);
+                }
+            })
+            //装载
+            .setUp();
+    ```
+
 
 ### 3.注意要点
 #### 3.1 项目注意点

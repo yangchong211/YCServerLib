@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -6,6 +6,21 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!-- 使用style方式定义activity切换动画 -->
+    <style name="activityAnim">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_in_top</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_in_top</item>
+    </style>
+
+    <style name="activityInnerAnim">
+        <item name="android:windowEnterTransition"
+            tools:ignore="NewApi">@transition/activity_explode</item>
+        <!--<item name="android:windowEnterAnimation">@transition/activity_explode</item>-->
+        <item name="android:windowExitTransition"
+            tools:ignore="NewApi">@transition/activity_explode</item>
+        <!--<item name="android:windowExitAnimation">@transition/activity_explode</item>-->
     </style>
 
 </resources>

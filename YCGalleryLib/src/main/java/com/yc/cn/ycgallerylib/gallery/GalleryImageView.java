@@ -41,6 +41,7 @@ public class GalleryImageView extends LinearLayout {
     private List<Bitmap> mListOfMedia;
     private int thumbnailSize;
     private boolean zoomEnabled;
+    private int zoomSize;
     private LinearLayout thumbnailsContainer;
     private HorizontalScrollView horizontalScrollView;
     private ViewPager viewPager;
@@ -133,6 +134,12 @@ public class GalleryImageView extends LinearLayout {
         return this;
     }
 
+
+    public GalleryImageView setZoomSize(int zoomSize) {
+        this.zoomSize = zoomSize;
+        return this;
+    }
+
     public GalleryImageView hideThumbnails(boolean thumbnailsHiddenEnabled) {
         if (thumbnailsHiddenEnabled){
             horizontalScrollView.setVisibility(GONE);
@@ -184,8 +191,8 @@ public class GalleryImageView extends LinearLayout {
     }
 
     private void initializeViewPager() {
-        viewPager = (CustomViewPager) findViewById(R.id.viewPager);
-        pagerAdapter = new ViewPagerAdapter(fragmentManager, mListOfMedia, zoomEnabled);
+        viewPager = (GalleryViewPager) findViewById(R.id.viewPager);
+        pagerAdapter = new ViewPagerAdapter(fragmentManager, mListOfMedia, zoomEnabled,zoomSize);
         viewPager.setAdapter(pagerAdapter);
         viewPager.addOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
             @Override

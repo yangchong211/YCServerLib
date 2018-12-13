@@ -29,6 +29,7 @@ dependencies {
     //noinspection GradleCompatible
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-//    implementation project(path: ':YCGalleryLib')
-    implementation 'cn.yc:YCGalleryLib:1.1.3'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+    implementation project(path: ':YCGalleryLib')
+//    implementation 'cn.yc:YCGalleryLib:1.1.3'
 }

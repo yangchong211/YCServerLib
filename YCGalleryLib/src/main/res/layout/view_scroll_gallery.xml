@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.yc.cn.ycgallerylib.gallery.CustomViewPager
+    <com.yc.cn.ycgallerylib.gallery.GalleryViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

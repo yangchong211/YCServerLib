@@ -27,11 +27,12 @@ import com.yc.cn.ycgallerylib.zoom.view.ZoomImageView;
 public class GalleryFragment extends Fragment {
 
     private Bitmap mBitmap;
-    private CustomViewPager viewPager;
+    private GalleryViewPager viewPager;
     private ZoomImageView backgroundImage;
     private FragmentActivity activity;
     private static final String IMAGE = "image";
     public static final String ZOOM = "zoom";
+    public static final String ZOOM_SIZE = "zoom_size";
     private static final String IS_LOCKED = "isLocked";
 
     @Override
@@ -94,8 +95,10 @@ public class GalleryFragment extends Fragment {
     }
 
     private void createViewAttache(Bundle savedInstanceState) {
-        if (savedInstanceState.getBoolean(ZOOM)) {
-            backgroundImage.setMaxScale(2);
+        boolean zoom = savedInstanceState.getBoolean(ZOOM);
+        int zoom_size = savedInstanceState.getInt(ZOOM_SIZE);
+        if (zoom) {
+            backgroundImage.setMaxScale(zoom_size);
         } else {
             backgroundImage.setMaxScale(1);
         }

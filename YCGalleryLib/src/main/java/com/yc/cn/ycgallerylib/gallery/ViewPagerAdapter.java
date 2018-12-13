@@ -20,11 +20,13 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     private List<Bitmap> mListOfMedia;
     private boolean isZoom = false;
+    private int zoomSize;
 
-    ViewPagerAdapter(FragmentManager fm, List<Bitmap> listOfMedia, boolean isZoom) {
+    ViewPagerAdapter(FragmentManager fm, List<Bitmap> listOfMedia, boolean isZoom, int zoomSize) {
         super(fm);
         this.mListOfMedia = listOfMedia;
         this.isZoom = isZoom;
+        this.zoomSize = zoomSize;
     }
 
     @Override
@@ -42,6 +44,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         fragment.setBitmap(bitmap);
         Bundle bundle = new Bundle();
         bundle.putBoolean(GalleryFragment.ZOOM, isZoom);
+        bundle.putInt(GalleryFragment.ZOOM_SIZE,zoomSize);
         fragment.setArguments(bundle);
         return fragment;
     }

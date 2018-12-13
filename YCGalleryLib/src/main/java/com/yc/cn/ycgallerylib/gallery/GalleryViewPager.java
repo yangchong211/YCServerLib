@@ -14,15 +14,15 @@ import android.view.MotionEvent;
  *     revise:
  * </pre>
  */
-public class CustomViewPager extends ViewPager {
+public class GalleryViewPager extends ViewPager {
 
     private boolean isLocked;
-    public CustomViewPager(Context context) {
+    public GalleryViewPager(Context context) {
         super(context);
         isLocked = false;
     }
 
-    public CustomViewPager(Context context, AttributeSet attrs) {
+    public GalleryViewPager(Context context, AttributeSet attrs) {
         super(context, attrs);
         isLocked = false;
     }
