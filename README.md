@@ -35,7 +35,7 @@
 
 
 ### 2.使用介绍
-- 如何引用：implementation 'cn.yc:YCGalleryLib:1.1.3'
+- 如何引用：implementation 'cn.yc:YCGalleryLib:1.1.4'
 
 #### 2.1 图片缩放与滑动控件
 - 在布局中
