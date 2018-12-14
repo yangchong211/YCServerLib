@@ -40,7 +40,7 @@
 
 
 #### 04 案例效果
-- ![image](https://github.com/yangchong211/YCGallery/blob/master/image/progress.gif)
+- ![image](https://github.com/yangchong211/YCGallery/blob/master/image/gallery.gif)
 
 
 
