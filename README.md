@@ -36,12 +36,12 @@
 
 
 #### 0.3 About language
-- [Chinese中文文档](https://github.com/yangchong211/YCProgress/blob/master/README_CH.md)
-- [English英文文档](https://github.com/yangchong211/YCProgress/blob/master/README.md)
+- [Chinese中文文档](https://github.com/yangchong211/YCGallery/blob/master/README_CH.md)
+- [English英文文档](https://github.com/yangchong211/YCGallery/blob/master/README_CH.md)
 
 
 #### 04 Case demonstration animation
-- ![image](https://github.com/yangchong211/YCProgress/blob/master/image/progress.gif)
+- ![image](https://github.com/yangchong211/YCGallery/blob/master/image/progress.gif)
 
 
 

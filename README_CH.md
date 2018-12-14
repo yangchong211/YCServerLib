@@ -35,12 +35,12 @@
 
 
 #### 0.3 关于中英文文档
-- [Chinese中文文档](https://github.com/yangchong211/YCProgress/blob/master/README_CH.md)
-- [English英文文档](https://github.com/yangchong211/YCProgress/blob/master/README.md)
+- [Chinese中文文档](https://github.com/yangchong211/YCGallery/blob/master/README_CH.md)
+- [English英文文档](https://github.com/yangchong211/YCGallery/blob/master/README_CH.md)
 
 
 #### 04 案例效果
-- ![image](https://github.com/yangchong211/YCProgress/blob/master/image/progress.gif)
+- ![image](https://github.com/yangchong211/YCGallery/blob/master/image/progress.gif)
 
 
 
