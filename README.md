@@ -41,8 +41,7 @@
 
 
 #### 04 Case demonstration animation
-- ![image](https://github.com/yangchong211/YCGallery/blob/master/image/progress.gif)
-
+- ![image](https://github.com/yangchong211/YCGallery/blob/master/image/gallery.gif)
 
 
 ### 1.This library advantage bright spot
