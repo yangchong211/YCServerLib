@@ -1,51 +1,74 @@
-## YCGallery
-画廊浏览和图片缩放控件
+## YCGallery Gallery browsing and picture zooming controls
 
-#### 目录介绍
-- 1.本库优势亮点
-- 2.使用介绍
-    - 2.1 图片缩放与滑动控件
-    - 2.2 支持加载loading的图片缩放控件
-    - 2.3 支持ViewPager滑动的画廊控件
-    - 2.4 使用RecyclerView实现画廊浏览
-- 3.注意要点
-    - 3.1 项目注意点
-    - 3.2 项目难点问题
-    - 3.3 待优化部分
-- 4.效果展示
-- 5.其他介绍
-
-
-
-### 0.使用场景模拟
-![image](https://github.com/yangchong211/YCGallery/blob/master/image/galley.gif)
+#### Catalogue introduction
+- 0.How to use
+- 1.This library advantage bright spot
+- 2.Introduction to use
+    - 2.1 picture zooming and sliding control
+    - 2.2 support loading picture zooming control
+    - 2.3 support ViewPager sliding gallery control
+    - 2.4 use RecyclerView to realize gallery browsing
+- 3.Attention points
+    - 3.1 Project points
+    - 3.2 Project difficult issues
+    - 3.3 to be optimized
+- 4.Effect display
+- 5.Other presentations
 
 
-### 1.本库优势亮点
-- 支持缩放，目前有两种方式，第一种是双击一下放大n倍，再双击一下则缩放n倍【也就是回到起初图片大小】
-- 可以自定义设置缩放最大比例大小，默认是2倍，这个不要瞎设置，如果设置参数小于1或者大于10，则取默认值为2倍
-- 双击放大或者缩小时，添加了过渡动画，这样使得体验效果更好。同时放大时，放大图片区域是靠近双击点击的位置
-- 双手指可以手势缩放图片大小，缩放模式下，手指长按可以拖动图片，不允许拖出边界之外。如果要设置不缩放，则可以把缩放比例设置为1
-- 缩放模式下屏幕上有多于2个手指【可能有的程序猿用5个手指滑动】并且按照任意顺序抬起放下均不会引起错乱和不平滑
-- 该缩放控件可以和ViewPager结合使用，效果非常棒，这个你可以跑下demo看下效果就知道
-- 当该缩放控件加载大图时，比如超过2MB以上的图片，那么加载图片也需要时间，这时候ZoomLayoutView支持加载loading
-- 开发者可以自己实现单击事件和长按事件，比如前产品要求，点击关闭缩放浏览页面，这个也可以实现
-- 支持使用RecyclerView实现画廊的效果，滑动十分流畅，同时支持图片，视频浏览。类似自己微信的朋友圈动态
+### 0.How to use 
+#### 0.1 Used
+- Add this in your root build.gradle file (not your module build.gradle file): 
+    ```
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
+    ```
+- Then, add the library to your module build.gradle 
+    ```
+    implementation 'cn.yc:YCGalleryLib:1.1.5'
+    ```
+
+#### 0.2 function declaration
+- Gallery browsing and picture zooming controls, can customize the maximum scale of zoom size, double-click when zooming in or down, adding a transition animation, so that the experience is better. The zoom control can be used in conjunction with ViewPager, and when the zoom control loads a large image, such as a picture above 2MB, it can be set to load the loading.
+
+
+#### 0.3 About language
+- [Chinese中文文档](https://github.com/yangchong211/YCProgress/blob/master/README_CH.md)
+- [English英文文档](https://github.com/yangchong211/YCProgress/blob/master/README.md)
+
+
+#### 04 Case demonstration animation
+- ![image](https://github.com/yangchong211/YCProgress/blob/master/image/progress.gif)
 
 
 
-### 2.使用介绍
-- 如何引用：implementation 'cn.yc:YCGalleryLib:1.1.4'
+### 1.This library advantage bright spot
+- There are two ways to support scaling, the first is to double click n times, and then double click to scale n times [that is, go back to the original image size]
+- you can customize the maximum scale size of the zoom, the default is 2 times, This should not be set indiscriminately, if the setting parameter is less than 1 or more than 10, then the default value is 2 times
+- double click to enlarge or shrink, adding a transition animation, so that the experience is better. At the same time, the magnified image area is close to the double click position
+- both hands can gesture to zoom the picture size. In zoom mode, the finger length can drag the picture, not beyond the border. If you want to set no scaling, You can set the scaling ratio to 1
+- zoom mode with more than 2 fingers on the screen [some programmers may slide with 5 fingers] and lift them down in any order without causing confusion or unsmoothness 
+- The zoom control can be used in conjunction with ViewPager, Itundefineds great, and you can run down the demo and look at the effect
+- when the zoom control loads a large image, such as a picture above 2MB, then it takes time to load the image, too. At this point, ZoomLayoutView supports loading
+- developers can implement click events and long press events themselves, such as previous product requirements, click close zoom browsing pages, and this can also be achieved 
+- by using RecyclerView to implement gallery effects. Glide very smoothly, support picture, video browse at the same time. Similar to his WeChatundefineds dynamic circle of friends
+- after testing, the picture zooming control perfectly supports the combination of ViewPager,RecyclerView,ListView and so on.
 
-#### 2.1 图片缩放与滑动控件
-- 在布局中
+
+
+### 2.Introduction to use
+#### 2.1 picture zooming and sliding control
+- In the layout
     ```
     <com.yc.cn.ycgallerylib.zoom.view.ZoomImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     ```
-- 代码设置
+- Code setting
     ```
     imageView = findViewById(R.id.image);
     imageView.setOnZoomClickListener(new OnZoomClickListener() {
@@ -65,28 +88,28 @@
     //注意不要使用setBackground设置图片，它不支持缩放
     //imageView.setBackground();
     ```
-- 可以适当添加优化代码
+- You can add optimization code as appropriate
     ```
     @Override
     protected void onDestroy() {
         super.onDestroy();
         if (imageView!=null){
-            //重置所有状态，清空mask，停止所有手势，停止所有动画
+            //Reset all states, clear mask, stop all gestures, stop all animations
             imageView.reset();
         }
     }
     ```
 
 
-#### 2.2 支持加载loading的图片缩放控件
-- 布局代码
+#### 2.2 support loading picture zooming control
+- In the layout
     ```
     <com.yc.cn.ycgallerylib.zoom.view.ZoomLayoutView
         android:id="@+id/zoomView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
     ```
-- 代码设置
+- Code setting
     ```
     zoomView = findViewById(R.id.zoomView);
     zoomView.setLoadingVisibility(true);
@@ -108,8 +131,8 @@
     ```
 
 
-#### 2.3 支持ViewPager滑动的画廊控件
-- 在布局中
+#### 2.3 support ViewPager sliding gallery control
+- In the layout
     ```
     <com.yc.cn.ycgallerylib.gallery.GalleryImageView
         android:id="@+id/scroll_gallery_view"
@@ -117,7 +140,7 @@
         android:layout_height="match_parent"
         android:background="#000" />
     ```
-- 在代码中设置
+- Code setting
     ```
     scrollGalleryView = findViewById(R.id.scroll_gallery_view);
     scrollGalleryView
@@ -165,8 +188,8 @@
     ```
 
 
-#### 2.4 使用RecyclerView实现画廊浏览
-- 在布局中
+#### 2.4 use RecyclerView to realize gallery browsing
+- In the layout
     ```
     <com.yc.cn.ycgallerylib.recyclerView.GalleryRecyclerView
         android:id="@+id/recyclerView"
@@ -174,7 +197,7 @@
         android:layout_height="match_parent"
         android:background="#000" />
     ```
-- 在代码中
+- Code setting
     ```
     mRecyclerView
             //设置滑动速度
@@ -212,31 +235,39 @@
     ```
 
 
-### 3.注意要点
-#### 3.1 项目注意点
+### 3.Attention points
+#### 3.1 Project points
 
 
-#### 3.2 项目难点问题
-- 3.2.1 滑动点击事件较多，比较难处理
-    - 当触摸事件手指抬起或者滑动结束之后，注意如果之前是缩放模式，则还需要触发一下缩放结束动画
-    - 当触摸事件手指在第一个点按下，开启滚动模式，记录开始滚动的点，则在矩阵动画过程中不允许启动滚动模式
-    - 当触摸事件为ACTION_POINTER_DOWN【代表用户又使用一个手指触摸到屏幕上，在已有一个触摸点的情况下，有新出现了一个触摸点】，则停止所有动画，切换到缩放模式，保存缩放的两个手指
-    - 当手指在move移动过程中，记录移动的点，然后处理缩放的逻辑。处理缩放时，注意按照图片缩放中心缩放，并且让缩放中心在缩放点中点上，让图片的缩放中点跟随手指缩放中点
-- 3.2.2 图片缩放频繁操作，创建Matrix的优化
-    - 创建对象池类。防止频繁new对象产生内存抖动，由于对象池最大长度限制，如果吞度量超过对象池容量，仍然会发生抖动。
-    - 此时需要增大对象池容量,但是会占用更多内存
-- 3.2.3 图片缩放过程中动画过渡效果处理
+#### 3.2 Project difficult issues
+- 3.2.1 Slip-click events are more difficult to handle
+    - when the touch event finger is raised or the slide is over, note that if the previous mode is in zoom mode, You also need to trigger a zoom end animation
+    - when the touch event finger is pressed at the first point, the scroll mode is turned on, and the point at which the scroll begins is recorded. Scrolling mode is not allowed during matrix animation when the touch event is ACTION_POINTER_DOWN [on behalf of the user and then uses a finger to touch the screen, where there is already a touch point, " There is a new touch point], then stop all animations, switch to zoom mode, and save the zooming two fingers
+    - when the finger is moving in the move, record the moving point, and then handle the zoom logic. When dealing with zooming, be careful to scale according to the image zoom center, and have the zoom center at the midpoint of the zoom point, so that the zoom center of the picture follows the finger zoom midpoint
+- 3.2.2 Picture zooms frequently to create Matrix optimizations
+    - create object pool classes. The memory jitter is prevented from frequent new objects. Because of the maximum length limit of the object pool, if the swallowing measure exceeds the object pool capacity, the jitter will still occur. 
+    - you need to increase the object pool capacity at this point, but it takes up more memory.
+- 3.2.3 Animation transition effect processing during Picture scaling and moving
+    - the first animation, for the inertial fling, after the finger slips, adds the inertia attribute animation FlingAnimator, first to clean up the animation that may be currently being executed, Then the speed gradually decays, when the picture can not move, the animation stops
+    - the second animation, for multi-finger operation zoom logic, add zooming attribute animation ScaleAnimator, build a zoom animation, Transform from one matrix to another. Pay attention to get the animation progress, then calculate the matrix interpolation according to the animation progress, and finally redraw, finally achieve the picture zoom effect
+- 3.2.4 load a large image can be set to load loading
+    - for loading a large picture, when the image is not visible, you can set the load loading, to display the picture when loaded successfully
 
 
-#### 3.3 待优化部分
-- 3.3.1 如果频繁调用图片缩放控件，如何增加bitmap复用，会不会造成bitmap内存泄漏？
-- 3.3.2 如何防止加载过大Bitmap，后期能否添加maxSize来控制加载到内存的图片的尺寸
-- 3.3.3 暂时不支持gif动态图片，后期能否添加该功能
-- 3.3.4 对于加载超大图，在网上看到有的方案说可以分块显示超大图功能，具体如何实现有待研究
-- 3.3.5 对于图片缩放，频繁操作，其实质还是通过Matrix实现，为了防止频繁new对象产生内存抖动，其对象池容量大小该设置多少才合理
+
+#### 3.3 to be optimized
+- 3.3.1 If the picture zoom control is invoked frequently, how to increase bitmap reuse, will it cause bitmap memory leak?
+- 3.3.2 How to prevent too large Bitmap, from being loaded later can maxSize be added to control the size of images loaded into memory
+- 3.3.3 Gif dynamic images are not supported for the time being, can this feature be added at a later stage
+- 3.3.4 For loading super large picture, see some scheme on the net that can show the function of super large picture in block, how to realize it needs to be studied in detail.
+- 3.3.5 For picture zooming and frequent operation, the essence is still implemented through Matrix. In order to prevent memory jitter from frequent new objects, the size of the object pool should be set properly.
+    - To resolve, create a matrix object pool MatrixPool, to add the created Matrix object to the object pool queue
+    - When you get an Matrix object, if the object pool is empty, the object pool itself returns a new, and if there is an object in the object pool, an existing return is taken.
+    - In order to prevent memory jitter and leakage, after the atrix object is used up, the object requested in the object pool is returned. If the number of returned objects exceeds the capacity of the object pool, the returned object will be discarded
 
 
-### 4.效果展示
+
+### 4.Effect display
 ![image](https://github.com/yangchong211/YCGallery/blob/master/image/1.png)
 ![image](https://github.com/yangchong211/YCGallery/blob/master/image/2.jpg)
 ![image](https://github.com/yangchong211/YCGallery/blob/master/image/3.jpg)
@@ -245,26 +276,27 @@
 
 
 
-### 5.其他介绍
-#### 关于其他内容介绍
+### 5. Other presentations
+#### About zhifubao
 ![image](https://upload-images.jianshu.io/upload_images/4432347-7100c8e5a455c3ee.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
-#### 关于博客汇总链接
-- 1.[技术博客汇总](https://www.jianshu.com/p/614cb839182c)
-- 2.[开源项目汇总](https://blog.csdn.net/m0_37700275/article/details/80863574)
-- 3.[生活博客汇总](https://blog.csdn.net/m0_37700275/article/details/79832978)
-- 4.[喜马拉雅音频汇总](https://www.jianshu.com/p/f665de16d1eb)
-- 5.[其他汇总](https://www.jianshu.com/p/53017c3fc75d)
+
+####  About blog Summary links
+- 1.[Technology blog summary](https://www.jianshu.com/p/614cb839182c)
+- 2.[Open source project summary](https://blog.csdn.net/m0_37700275/article/details/80863574)
+- 3.[Life blog summary](https://blog.csdn.net/m0_37700275/article/details/79832978)
+     
 
 
-#### 其他推荐
-- 博客笔记大汇总【15年10月到至今】，包括Java基础及深入知识点，Android技术博客，Python学习笔记等等，还包括平时开发中遇到的bug汇总，当然也在工作之余收集了大量的面试题，长期更新维护并且修正，持续完善……开源的文件是markdown格式的！同时也开源了生活博客，从12年起，积累共计47篇[近20万字]，转载请注明出处，谢谢！
-- 链接地址：https://github.com/yangchong211/YCBlogs
-- 如果觉得好，可以star一下，谢谢！当然也欢迎提出建议，万事起于忽微，量变引起质变！
+#### About recommend
+- Great summary of blog notes, including Java basics and in-depth knowledge, Android technology blog, Python learning notes, and so on, but also includes the usual development of bug summary, of course, also collected a large number of interview questions after work. Long-term update, maintenance and revision, continuous improvement. Open source files are in markdown format!
+- chained address ： https://github.com/yangchong211/YCBlogs
+- If you feel good, you can star, thank you! Of course, you are also welcome to put forward suggestions, everything starts at a slight, quantitative change causes qualitative change!
 
 
-#### 关于LICENSE
+
+#### About LICENSE
 ```
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
