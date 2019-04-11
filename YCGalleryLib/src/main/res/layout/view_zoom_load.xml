@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:background="@android:color/black">
 
-    <com.yc.cn.ycgallerylib.zoom.view.ZoomImageView
+    <com.ycbjie.zoomimagelib.view.ZoomImageView
         android:id="@+id/imageView"
         android:visibility="visible"
         android:layout_width="match_parent"

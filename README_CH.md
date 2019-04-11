@@ -15,6 +15,7 @@
 - 4.效果展示
 - 5.其他介绍
 
+
 ### 0.如何使用
 #### 0.1 使用
 - 将此添加到根目录中 build.gradle 文件(不是项目中的 build.gradle 文件): 
@@ -58,75 +59,7 @@
 
 ### 2.使用介绍
 #### 2.1 图片缩放与滑动控件
-- 在布局中
-    ```
-    <com.yc.cn.ycgallerylib.zoom.view.ZoomImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    ```
-- 代码设置
-    ```
-    imageView = findViewById(R.id.image);
-    imageView.setOnZoomClickListener(new OnZoomClickListener() {
-        @Override
-        public void onClick(View v) {
-            finish();
-        }
-    });
-    imageView.setOnZoomLongClickListener(new OnZoomLongClickListener() {
-        @Override
-        public boolean onLongClick(View v) {
-            return false;
-        }
-    });
-    imageView.setMaxScale(4);
-    imageView.setImageResource(R.drawable.image1);
-    //注意不要使用setBackground设置图片，它不支持缩放
-    //imageView.setBackground();
-    ```
-- 可以适当添加优化代码
-    ```
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (imageView!=null){
-            //重置所有状态，清空mask，停止所有手势，停止所有动画
-            imageView.reset();
-        }
-    }
-    ```
-
-
-#### 2.2 支持加载loading的图片缩放控件
-- 布局代码
-    ```
-    <com.yc.cn.ycgallerylib.zoom.view.ZoomLayoutView
-        android:id="@+id/zoomView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-    ```
-- 代码设置
-    ```
-    zoomView = findViewById(R.id.zoomView);
-    zoomView.setLoadingVisibility(true);
-    Uri parse = Uri.parse("file:///android_asset/yc.png");
-    Picasso.with(this)
-            .load(parse)
-            .memoryPolicy(MemoryPolicy.NO_CACHE)
-            .into(zoomView.getImageView(), new Callback() {
-                @Override
-                public void onSuccess() {
-                    zoomView.setZoomViewVisibility(true);
-                }
-    
-                @Override
-                public void onError() {
-    
-                }
-            });
-    ```
-
+- 关于图片缩放控件，已经将该功能单独抽取出来封装成图片缩放库，具体可以见：https://github.com/yangchong211/YCZoomImage
 
 #### 2.3 支持ViewPager滑动的画廊控件
 - 在布局中

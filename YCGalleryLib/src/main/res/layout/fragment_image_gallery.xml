@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.yc.cn.ycgallerylib.zoom.view.ZoomImageView
+    <com.ycbjie.zoomimagelib.view.ZoomImageView
         android:id="@+id/backgroundImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

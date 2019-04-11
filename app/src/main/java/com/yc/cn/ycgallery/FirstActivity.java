@@ -50,8 +50,6 @@ public class FirstActivity extends FragmentActivity {
                 finalLocationOnTheScreen[1], // top
                 scrollGalleryView.getWidth(),
                 scrollGalleryView.getHeight());
-
-
     }
 
     @SuppressLint("SetTextI18n")

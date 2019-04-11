@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.yc.cn.ycgallerylib.R;
-import com.yc.cn.ycgallerylib.zoom.view.ZoomImageView;
+import com.ycbjie.zoomimagelib.view.ZoomImageView;
 
 /**
  * <pre>
