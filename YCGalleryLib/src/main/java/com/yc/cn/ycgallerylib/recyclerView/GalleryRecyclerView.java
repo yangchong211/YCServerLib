@@ -157,19 +157,20 @@ public class GalleryRecyclerView extends RecyclerView {
                     int dx = x - initialTouchX;
                     int dy = y - initialTouchY;
                     boolean startScroll = false;
-                    boolean scrollHorizontally = getLayoutManager().canScrollHorizontally();
-                    boolean scrollVertically = getLayoutManager().canScrollVertically();
+                    if (getLayoutManager()!=null){
+                        boolean scrollHorizontally = getLayoutManager().canScrollHorizontally();
+                        boolean scrollVertically = getLayoutManager().canScrollVertically();
+                        if(scrollHorizontally && Math.abs(dy) > touchSlop && ( Math.abs(dx) > Math.abs(dy))) {
+                            startScroll = true;
+                        }
+                        if(scrollVertically && Math.abs(dy) > touchSlop && ( Math.abs(dy) > Math.abs(dx))) {
+                            startScroll = true;
+                        }
 
-                    if(scrollHorizontally && Math.abs(dy) > touchSlop && ( Math.abs(dx) > Math.abs(dy))) {
-                        startScroll = true;
-                    }
-                    if(scrollVertically && Math.abs(dy) > touchSlop && ( Math.abs(dy) > Math.abs(dx))) {
-                        startScroll = true;
-                    }
-
-                    //如下条件，结合成一个条件， 前者条件已经是判断未纵向移动了，那么后面补上横向移动就行
-                    if(scrollVertically && Math.abs(dy) > touchSlop && (scrollHorizontally || Math.abs(dy) > Math.abs(dx))) {
-                        startScroll = true;
+                        //如下条件，结合成一个条件， 前者条件已经是判断未纵向移动了，那么后面补上横向移动就行
+                        if(scrollVertically && Math.abs(dy) > touchSlop && (scrollHorizontally || Math.abs(dy) > Math.abs(dx))) {
+                            startScroll = true;
+                        }
                     }
                     return startScroll && super.onInterceptTouchEvent(e);
                 }
@@ -193,7 +194,6 @@ public class GalleryRecyclerView extends RecyclerView {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Log.e("onEvent","MyLinearLayout onTouchEvent");
-
         return super.onTouchEvent(event);
     }
 
@@ -263,7 +263,7 @@ public class GalleryRecyclerView extends RecyclerView {
         }else {
             throw new NullPointerException("需要设置adapter");
         }
-        if (getAdapter().getItemCount() <= 0) {
+        if (this.getAdapter()!=null && this.getAdapter().getItemCount() <= 0) {
             return;
         }
         //暂时保持横向滑动

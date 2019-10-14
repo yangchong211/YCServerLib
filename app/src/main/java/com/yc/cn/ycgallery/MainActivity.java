@@ -72,6 +72,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             MainActivity.this, tv_5, "YangChong").toBundle());
                 }
                 break;
+            default:
+                break;
         }
     }
 
