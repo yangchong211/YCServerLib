@@ -28,7 +28,7 @@
     ```
 - 然后，将库添加到模块中 build.gradle 
     ```
-    implementation 'cn.yc:YCGalleryLib:1.1.5'
+    implementation 'com.github.yangchong211.YCImageGallery:GalleryViewLib:1.1.6'
     ```
 
 #### 0.2 功能介绍

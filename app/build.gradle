@@ -31,9 +31,10 @@ dependencies {
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
-    implementation project(path: ':GalleryViewLib')
-    implementation project(path: ':GalleryPagerLib')
+//    implementation project(path: ':GalleryViewLib')
+//    implementation project(path: ':GalleryPagerLib')
     implementation 'org.jsoup:jsoup:1.11.2'
     implementation 'cn.yc:zoomImageLib:1.0.1'
-//    implementation 'cn.yc:YCGalleryLib:1.1.5'
+    implementation 'com.github.yangchong211.YCImageGallery:GalleryViewLib:1.1.6'
+    implementation 'com.github.yangchong211.YCImageGallery:GalleryPagerLib:1.1.6'
 }

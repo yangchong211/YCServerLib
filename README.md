@@ -28,7 +28,7 @@
     ```
 - Then, add the library to your module build.gradle 
     ```
-    implementation 'cn.yc:YCGalleryLib:1.1.5'
+    implementation 'com.github.yangchong211.YCImageGallery:GalleryViewLib:1.1.6'
     ```
 
 #### 0.2 function declaration
