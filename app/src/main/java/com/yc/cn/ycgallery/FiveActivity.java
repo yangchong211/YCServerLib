@@ -3,14 +3,15 @@ package com.yc.cn.ycgallery;
 import android.annotation.SuppressLint;
 import android.content.res.TypedArray;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.yc.cn.ycgallerylib.recyclerView.GalleryRecyclerView;
-import com.yc.cn.ycgallerylib.recyclerView.OnGalleryListener;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.yc.gallerylib.recyclerView.GalleryRecyclerView;
+import com.yc.gallerylib.recyclerView.OnGalleryListener;
 
 import java.util.ArrayList;
 

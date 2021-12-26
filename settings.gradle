@@ -1,1 +1,2 @@
-include ':app', ':YCGalleryLib'
+include ':app', ':GalleryViewLib'
+include ':GalleryPagerLib'

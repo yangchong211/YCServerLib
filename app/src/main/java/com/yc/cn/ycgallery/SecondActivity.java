@@ -1,13 +1,14 @@
 package com.yc.cn.ycgallery;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.yc.cn.ycgallerylib.zoom.view.ZoomImageView;
-import com.yc.cn.ycgallerylib.zoom.listener.OnZoomClickListener;
-import com.yc.cn.ycgallerylib.zoom.listener.OnZoomLongClickListener;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.ycbjie.zoomimagelib.listener.OnZoomClickListener;
+import com.ycbjie.zoomimagelib.listener.OnZoomLongClickListener;
+import com.ycbjie.zoomimagelib.view.ZoomImageView;
 
 
 public class SecondActivity extends AppCompatActivity {

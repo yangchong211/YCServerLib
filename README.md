@@ -62,7 +62,7 @@
 #### 2.1 picture zooming and sliding control
 - In the layout
     ```
-    <com.yc.cn.ycgallerylib.zoom.view.ZoomImageView
+    <com.yc.ycgallerylib.zoom.view.ZoomImageView
             android:id="@+id/image"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
@@ -103,7 +103,7 @@
 #### 2.2 support loading picture zooming control
 - In the layout
     ```
-    <com.yc.cn.ycgallerylib.zoom.view.ZoomLayoutView
+    <com.yc.ycgallerylib.zoom.view.ZoomLayoutView
         android:id="@+id/zoomView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -133,7 +133,7 @@
 #### 2.3 support ViewPager sliding gallery control
 - In the layout
     ```
-    <com.yc.cn.ycgallerylib.gallery.GalleryImageView
+    <com.yc.ycgallerylib.gallery.GalleryImageView
         android:id="@+id/scroll_gallery_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -190,7 +190,7 @@
 #### 2.4 use RecyclerView to realize gallery browsing
 - In the layout
     ```
-    <com.yc.cn.ycgallerylib.recyclerView.GalleryRecyclerView
+    <com.yc.ycgallerylib.recyclerView.GalleryRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

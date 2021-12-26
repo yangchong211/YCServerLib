@@ -64,7 +64,7 @@
 #### 2.3 支持ViewPager滑动的画廊控件
 - 在布局中
     ```
-    <com.yc.cn.ycgallerylib.gallery.GalleryImageView
+    <com.yc.ycgallerylib.gallery.GalleryImageView
         android:id="@+id/scroll_gallery_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -121,7 +121,7 @@
 #### 2.4 使用RecyclerView实现画廊浏览
 - 在布局中
     ```
-    <com.yc.cn.ycgallerylib.recyclerView.GalleryRecyclerView
+    <com.yc.ycgallerylib.recyclerView.GalleryRecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

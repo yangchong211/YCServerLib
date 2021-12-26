@@ -3,16 +3,17 @@ package com.yc.cn.ycgallery;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.view.Window;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.squareup.picasso.Callback;
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
-import com.yc.cn.ycgallerylib.zoom.view.ZoomImageView;
+import com.ycbjie.zoomimagelib.view.ZoomImageView;
 
 public class ThirdActivity extends AppCompatActivity {
 

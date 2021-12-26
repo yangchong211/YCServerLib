@@ -4,20 +4,17 @@ import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
-import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.ViewPager;
+
 import com.yc.cn.ycgallery.animations.EnterScreenAnimations;
 import com.yc.cn.ycgallery.animations.ExitScreenAnimations;
-import com.yc.cn.ycgallerylib.gallery.GalleryImageView;
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.yc.gallerylib.gallery.GalleryImageView;
 
 public class FirstActivity extends FragmentActivity {
 

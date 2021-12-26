@@ -5,9 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.yc.cn.ycgallerylib.zoom.view.ZoomLayoutView
-        android:id="@+id/zoomView"
+
+    <com.yc.gallerypager.ScrollGalleryView
+        android:id="@+id/scroll_gallery_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:background="#000" />
 
 </LinearLayout>

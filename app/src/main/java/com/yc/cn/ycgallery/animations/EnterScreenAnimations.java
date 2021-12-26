@@ -5,12 +5,13 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.graphics.Matrix;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+
+import androidx.annotation.NonNull;
 
 import java.util.Arrays;
 
@@ -100,10 +101,7 @@ public class EnterScreenAnimations extends ScreenAnimation{
         return enteringImageAnimation;
     }
 
-    /**
-     * This method creates an animator that changes ImageView position on the screen.
-     * It will look like view is translated from its position on previous screen to its new position on this screen
-     */
+
     @NonNull
     private ObjectAnimator createEnteringImagePositionAnimator() {
         PropertyValuesHolder propertyLeft = PropertyValuesHolder.ofInt("left", mAnimatedImage.getLeft(), mToLeft);

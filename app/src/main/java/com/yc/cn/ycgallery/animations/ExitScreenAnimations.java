@@ -6,12 +6,12 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.app.Activity;
 import android.graphics.Matrix;
-import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 
+import androidx.annotation.NonNull;
 
 
 public class ExitScreenAnimations extends ScreenAnimation{
