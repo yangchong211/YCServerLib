@@ -1,2 +1,6 @@
 include ':app', ':GalleryViewLib'
 include ':GalleryPagerLib'
+include ':GrpcServer'
+include ':CompressServer'
+include ':EasyBleServer'
+include ':AppGrpc'

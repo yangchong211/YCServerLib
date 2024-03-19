@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.protobuf'
+//apply from: rootProject.projectDir.absolutePath + "/yc.gradle"
+
+android {
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
+    //buildToolsVersion rootProject.ext.android["buildToolsVersion"]
+    defaultConfig {
+        minSdkVersion rootProject.ext.android["minSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
+        versionCode rootProject.ext.android["versionCode"]
+        versionName rootProject.ext.android["versionName"]
+        applicationId "com.yc.appgrpc"
+        // dex突破65535的限制
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        debug { minifyEnabled false }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        disable 'GoogleAppIndexingWarning', 'HardcodedText', 'InvalidPackage'
+        textReport true
+        textOutput "stdout"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*******'
+        exclude 'META-INF/INDEX.LIST'
+    }
+}
+
+protobuf {
+    protoc {
+        // 相当于proto编译器
+        artifact = 'com.google.protobuf:protoc:3.22.3'
+    }
+    plugins {
+        // grpc单独的编译器
+        grpc {
+            artifact = 'io.grpc:protoc-gen-grpc-java:1.19.0'
+        }
+        // 官方推荐的方法，Android 适用javalite，相较于java插件，生成的代码更轻量化
+        //javalite {artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'}
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java { option 'lite' }
+            }
+            task.plugins {
+                grpc { // Options added to --grpc_out
+                    option 'lite'
+                }
+            }
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["appcompat"]
+    implementation rootProject.ext.dependencies["annotation"]
+    implementation(rootProject.ext.dependencies["constraintlayout"])
+    implementation rootProject.ext.dependencies["gson"]
+    implementation 'com.github.yangchong211.YCWidgetLib:RoundCorners:1.0.6'
+    implementation project(path: ':GrpcServer')
+    implementation 'com.github.yangchong211.YCDialog:ToastUtils:3.6.9'
+    //工具类utils
+    implementation 'com.github.yangchong211.YCCommonLib:ToolUtilsLib:1.4.9'
+
+    //protobuf
+    implementation 'io.grpc:grpc-netty:1.33.0'
+    implementation 'io.grpc:grpc-okhttp:1.33.0'
+    implementation 'io.grpc:grpc-protobuf-lite:1.33.0'
+    implementation 'io.grpc:grpc-stub:1.33.0'
+    implementation 'org.apache.tomcat:annotations-api:6.0.53'
+}

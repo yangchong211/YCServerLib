@@ -1,6 +1,7 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from: "yc.gradle"
 
 buildscript {
+    apply from: 'yc.gradle'
     repositories {
         google()
         jcenter()
@@ -8,12 +9,27 @@ buildscript {
             url 'https://maven.google.com/'
             name 'Google'
         }
-        maven { url "https://jitpack.io" }
+        //添加阿里云镜像
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        maven { url 'https://jitpack.io' }
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "com.android.tools.build:gradle:$buildVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        //使用gRPC网络请求需要的插件
+        classpath "com.google.protobuf:protobuf-gradle-plugin:0.9.1"
         //jitpack
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        //jetpack
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.0.0"
+        //自定义插件
+        //classpath 'com.github.yangchong211.YCAppTool:ServiceLoaderPlugin:1.4.4'
+        //classpath 'com.github.yangchong211.YCAppTool:BuildTimeCostPlugin:1.4.4'
+
+
     }
 }
 
@@ -25,7 +41,13 @@ allprojects {
             url 'https://maven.google.com/'
             name 'Google'
         }
-        maven { url "https://jitpack.io" }
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://gitee.com/liuchaoya/libcommon/raw/master/repository/' }
+        //添加阿里云镜像
+        maven { url "https://maven.aliyun.com/repository/public" }
+        maven { url "https://maven.aliyun.com/repository/google" }
+        maven { url "https://maven.aliyun.com/repository/jcenter" }
+        mavenCentral()
     }
 }
 
